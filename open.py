@@ -1,6 +1,7 @@
 import os
 import webbrowser
 import pandas as pd
+from urllib.parse import quote
 
 chrome_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s --incognito' 
 cwd = os.getcwd()
@@ -14,5 +15,5 @@ for file in files:
         if count > 9:
             input("Press Enter to continue...")
             count = 0
-        webbrowser.get(chrome_path).open('https://www.google.com.tr/search?q=' + item)
+        webbrowser.get(chrome_path).open('https://www.google.com.tr/search?q=' + quote(item))
         count = count + 1
