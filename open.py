@@ -11,9 +11,9 @@ os.startfile('C:/Program Files (x86)/Google/Chrome/Application/chrome.exe', "ope
 for file in files:   
     xl = pd.ExcelFile(f'{cwd}\\files\\' + file)
     df = xl.parse("Sheet1")
-    for item in df['Desc']:
+    for item_description in df['Desc']:
         if count > 9:
             input("Press Enter to continue...")
             count = 0
-        webbrowser.get(chrome_path).open('https://www.google.com.tr/search?q=' + quote(item))
+        webbrowser.get(chrome_path).open("https://www.google.com.tr/search?q=" + quote(item_description))
         count = count + 1
