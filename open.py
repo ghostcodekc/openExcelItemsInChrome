@@ -11,6 +11,7 @@ os.startfile('C:/Program Files (x86)/Google/Chrome/Application/chrome.exe', "ope
 for file in files:   
     xl = pd.ExcelFile(f'{cwd}\\files\\' + file)
     df = xl.parse("Sheet1")
+    df = df.sort_values('Desc')
     for item_description in df['Desc']:
         if count > 9:
             input("Press Enter to continue...")
